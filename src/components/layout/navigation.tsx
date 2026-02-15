@@ -2,85 +2,85 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { FiMenu, FiX, FiBarChart2 } from "react-icons/fi";
 import { useState } from "react";
 
 export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="border-b border-gray-200 bg-white/80 backdrop-blur-md sticky top-0 z-50">
+    <nav className="border-b border-white/5 bg-background/80 backdrop-blur-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">TP</span>
+          <Link href="/" className="flex items-center space-x-3">
+            <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
+              <FiBarChart2 className="h-5 w-5 text-white" />
             </div>
-            <span className="font-bold text-xl text-gray-900">TeamPulse</span>
-          </div>
+            <span className="font-bold text-xl text-foreground">TeamPulse</span>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="#features" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <Link href="#features" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
               Features
             </Link>
-            <Link href="#pricing" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <Link href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
               Pricing
             </Link>
-            <Link href="#about" className="text-gray-600 hover:text-gray-900 transition-colors">
-              About
+            <Link href="#product" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
+              Product
             </Link>
-            <Link href="#contact" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <Link href="#contact" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
               Contact
             </Link>
           </div>
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" size="sm">
+            <Button variant="ghost" size="sm" className="text-foreground hover:text-foreground">
               Sign in
             </Button>
-            <Button size="sm" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
-              Get started
+            <Button size="sm" className="bg-primary hover:bg-primary/90 text-white">
+              Start free trial
             </Button>
           </div>
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden p-2"
+            className="md:hidden p-2 text-foreground"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? (
-              <X className="h-6 w-6" />
+              <FiX className="h-6 w-6" />
             ) : (
-              <Menu className="h-6 w-6" />
+              <FiMenu className="h-6 w-6" />
             )}
           </button>
         </div>
 
         {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200">
+          <div className="md:hidden py-4 border-t border-white/5">
             <div className="flex flex-col space-y-4">
-              <Link href="#features" className="text-gray-600 hover:text-gray-900">
+              <Link href="#features" className="text-muted-foreground hover:text-foreground px-2">
                 Features
               </Link>
-              <Link href="#pricing" className="text-gray-600 hover:text-gray-900">
+              <Link href="#pricing" className="text-muted-foreground hover:text-foreground px-2">
                 Pricing
               </Link>
-              <Link href="#about" className="text-gray-600 hover:text-gray-900">
-                About
+              <Link href="#product" className="text-muted-foreground hover:text-foreground px-2">
+                Product
               </Link>
-              <Link href="#contact" className="text-gray-600 hover:text-gray-900">
+              <Link href="#contact" className="text-muted-foreground hover:text-foreground px-2">
                 Contact
               </Link>
-              <div className="flex flex-col space-y-2 pt-4 border-t border-gray-200">
+              <div className="flex flex-col space-y-2 pt-4 border-t border-white/5">
                 <Button variant="ghost" size="sm" className="w-full justify-start">
                   Sign in
                 </Button>
-                <Button size="sm" className="w-full bg-gradient-to-r from-blue-600 to-purple-600">
-                  Get started
+                <Button size="sm" className="w-full bg-primary hover:bg-primary/90">
+                  Start free trial
                 </Button>
               </div>
             </div>

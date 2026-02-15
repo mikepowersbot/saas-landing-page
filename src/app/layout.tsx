@@ -10,8 +10,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "TeamPulse - HR Management Made Simple",
-  description: "Streamline your team's performance, engagement, and growth with TeamPulse.",
+  title: "TeamPulse - Intelligent HR Management",
+  description: "Streamline performance reviews, employee engagement, and OKR tracking with TeamPulse.",
 };
 
 export default function RootLayout({
@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${inter.variable} dark`}>
       <body className="antialiased">
         <Navigation />
         <main>{children}</main>

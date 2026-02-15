@@ -1,15 +1,15 @@
 import { Hero } from "@/components/hero";
 import { Features } from "@/components/features";
 import { Pricing } from "@/components/pricing";
-import { CTA } from "@/components/cta";
+import { Cta } from "@/components/cta";
 
-export default function HomePage() {
+export default function Home() {
   return (
-    <div className="min-h-screen">
+    <>
       <Hero />
       <Features />
       <Pricing />
-      <CTA />
-    </div>
+      <Cta />
+    </>
   );
 }

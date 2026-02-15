@@ -4,24 +4,24 @@
 
 @layer base {
   :root {
-    --background: 255 255 255;
-    --foreground: 15 23 42;
-    --card: 0 0 0 / 0;
-    --card-foreground: 0 0 0 / 0;
-    --popover: 0 0 0 / 0;
-    --popover-foreground: 0 0 0 / 0;
-    --primary: 59 130 246;
+    --background: 8 10 20; /* Dark navy */
+    --foreground: 248 250 252; /* Light gray/white */
+    --card: 15 23 42; /* Slightly lighter navy */
+    --card-foreground: 248 250 252;
+    --popover: 15 23 42;
+    --popover-foreground: 248 250 252;
+    --primary: 59 130 246; /* Blue accent */
     --primary-foreground: 255 255 255;
-    --secondary: 248 250 252;
-    --secondary-foreground: 15 23 42;
-    --muted: 248 250 252;
-    --muted-foreground: 100 116 139;
-    --accent: 248 250 252;
-    --accent-foreground: 15 23 42;
+    --secondary: 30 41 59; /* Muted navy */
+    --secondary-foreground: 248 250 252;
+    --muted: 30 41 59;
+    --muted-foreground: 148 163 184;
+    --accent: 59 130 246;
+    --accent-foreground: 255 255 255;
     --destructive: 239 68 68;
     --destructive-foreground: 255 255 255;
-    --border: 226 232 240;
-    --input: 226 232 240;
+    --border: 30 41 59;
+    --input: 30 41 59;
     --ring: 59 130 246;
     --radius: 0.75rem;
   }
@@ -36,14 +36,20 @@
   }
 }
 
-/* Custom gradient backgrounds */
-.gradient-hero {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
+/* Custom components */
+@layer components {
+  .glass-card {
+    @apply bg-card/50 backdrop-blur-sm border border-white/10;
+  }
 
-.gradient-text {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  .text-gradient {
+    background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .dashboard-preview {
+    @apply rounded-xl border border-white/10 bg-card/80 backdrop-blur-md overflow-hidden;
+  }
 }
